@@ -1,31 +1,48 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putnbr_base.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jreyes-s <jreyes-s@student.42madrid.com>   +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/11/16 02:06:22 by jreyes-s          #+#    #+#             */
+/*   Updated: 2025/11/16 02:56:29 by jreyes-s         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-int	ft_atoi(char *str)
+void    ft_putchar(char c)
 {
-	int	res;
-	int	sign;
-
-	res = 0;
-	sign = 1;
-	while (*str == ' ' || *str >= 7 && *str <= 13)
-		str++;
-	while (*str == '-' || *str == '+')
-	{
-		if (*str == '-')
-			sign *= -1;
-		str++;
-	}
-	while (*str >= '0' && *str <= '9')
-	{
-		res = res * 10 + (*str - '0');
-		str++;
-	}
-	return (res * sign);
+    write(1, &c, 1);
 }
-/*
-void ft_putnbr_base(int nbr, char *base)
+
+void    check_ft_putnbr_base(char *base)
 {
-	;
-}*/
+    int j;
+    int i;
+
+    i = 0;
+    while (base[i])
+    {
+        if (base[i] == '-' || base[i] == '+')
+            return (0);
+        j = i + 1;
+        while (base[j])
+        {
+            if (base[i] == base[j])
+                return (0);
+            j++;
+        }
+        i++;
+    }
+    if (i < 2)
+        return (0);
+    return (1);
+}
+
+void    ft_putnbr_base(int nbr, char *base)
+{
+    
+}
 
 #include <stdio.h>
 
