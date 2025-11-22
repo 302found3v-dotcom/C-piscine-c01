@@ -6,16 +6,11 @@
 /*   By: jreyes-s <jreyes-s@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/16 04:07:42 by jreyes-s          #+#    #+#             */
-/*   Updated: 2025/11/16 04:08:38 by jreyes-s         ###   ########.fr       */
+/*   Updated: 2025/11/23 00:12:11 by jreyes-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-
-void    ft_putchar(char c)
-{
-    write(1, &c, 1);
-}
 
 void    ft_putnbr(int nbr)
 {
@@ -23,7 +18,7 @@ void    ft_putnbr(int nbr)
     if (nbr >= 10)
         ft_putnbr(nbr / 10);
     c = (nbr % 10) + '0';
-    ft_putchar(c);
+    write(1, &c, 1);
 }
 
 void    ft_buzzfizz(void)
@@ -35,19 +30,18 @@ void    ft_buzzfizz(void)
     {
         if (n % 4 == 0)
         {
-            ft_putnbr(n);
             write(1, "FizzBuzz\n", 9);
         }
         else if (n % 7 == 0)
         {
-            ft_putnbr(n);
             write(1, "Fizz\n", 5);
         }
         else if ((n % 4 == 0) && (n % 7 == 0))
         {
-            ft_putnbr(n);
             write(1, "Buzz\n", 5);
         }
+		else
+			ft_putnbr(n);
         n++;
     }
 }
