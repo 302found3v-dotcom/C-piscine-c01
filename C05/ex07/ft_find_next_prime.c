@@ -1,18 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ft.c                                            :+:      :+:    :+:   */
+/*   ft_find_next_prime.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jreyes-s <jreyes-s@student.42madrid.c      +#+  +:+       +#+        */
+/*   By: jreyes-s <jreyes-s@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/09 17:13:08 by jreyes-s          #+#    #+#             */
-/*   Updated: 2025/11/09 17:36:17 by jreyes-s         ###   ########.fr       */
+/*   Created: 2025/11/20 08:53:37 by jreyes-s          #+#    #+#             */
+/*   Updated: 2025/11/20 09:07:40 by jreyes-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ft_ft(int *nbr)
+int	ft_find_next_prime(int nb)
 {
-	*nbr = 42;
+	int	i;
+
+	if (nb < 0)
+		return (0);
+	i = ;
 }

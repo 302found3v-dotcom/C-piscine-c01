@@ -1,18 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ft.c                                            :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jreyes-s <jreyes-s@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/09 17:13:08 by jreyes-s          #+#    #+#             */
-/*   Updated: 2025/11/09 17:36:17 by jreyes-s         ###   ########.fr       */
+/*   Created: 2025/11/09 23:43:28 by jreyes-s          #+#    #+#             */
+/*   Updated: 2025/11/10 21:53:45 by jreyes-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ft_ft(int *nbr)
+char	*ft_strcpy(char *dest, char *src)
 {
-	*nbr = 42;
+	int	i;
+
+	i = 0;
+	while (src[i] != '\0')
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	dest[i] = '\0';
+	return (dest);
 }
+/*
+#include <stdio.h>
+int	main(void)
+{
+	char	*src;
+	char	dest[20];
+	char	*func;
+
+	src = "¡Hello World!";
+	func = ft_strcpy(src, dest);
+	printf("%s\n", func);
+	printf("%s\n", src);
+	return (0);
+}*/

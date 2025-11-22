@@ -1,37 +1,51 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlowcase.c                                    :+:      :+:    :+:   */
+/*   ft_print_comb2.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jreyes-s <jreyes-s@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/11 11:56:02 by jreyes-s          #+#    #+#             */
-/*   Updated: 2025/11/11 11:57:40 by jreyes-s         ###   ########.fr       */
+/*   Created: 2025/11/07 12:09:18 by jreyes-s          #+#    #+#             */
+/*   Updated: 2025/11/16 16:22:23 by jreyes-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*#include <stdio.h>*/
+#include <unistd.h>
 
-char	*ft_strlowcase(char *str)
+void	ft_putchar(char c)
 {
-	int	i;
-
-	i = 0;
-	while (str[i] != '\0')
-	{
-		if (str[i] >= 'A' && str[i] <= 'Z')
-			str[i] = str[i] + 32;
-		i++;
-	}
-	return (str);
+	write(1, &c, 1);
 }
-/*
+
+void	ft_print_comb2(void)
+{
+	int	a;
+	int	b;
+
+	a = 0;
+	while (a <= 98)
+	{
+		b = a + 1;
+		while (b <= 99)
+		{
+			ft_putchar((a / 10) + '0');
+			ft_putchar((a % 10) + '0');
+			ft_putchar(' ');
+			ft_putchar((b / 10) + '0');
+			ft_putchar((b % 10) + '0');
+			if (a != 98)
+			{
+				ft_putchar(',');
+				ft_putchar(' ');
+			}
+			b++;
+		}
+		a++;
+	}
+}
+
 int	main(void)
 {
-	char	str[] = "HOLA MUnDO";
-	char	*func;
-
-	func = ft_strlowcase(str);
-	printf("%s\n", func);
+	ft_print_comb2();
 	return (0);
-}*/
+}

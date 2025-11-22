@@ -1,40 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sqrt.c                                          :+:      :+:    :+:   */
+/*   ft_strncat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jreyes-s <jreyes-s@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/20 06:07:12 by jreyes-s          #+#    #+#             */
-/*   Updated: 2025/11/22 23:33:27 by jreyes-s         ###   ########.fr       */
+/*   Created: 2025/11/13 22:36:19 by jreyes-s          #+#    #+#             */
+/*   Updated: 2025/11/17 21:06:20 by jreyes-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_sqrt(int nb)
+char	*ft_strncat(char *dest, char *src, unsigned int nb)
 {
-	int	i;
+	unsigned int	i;
+	unsigned int	j;
 
 	i = 0;
-	while (i < nb)
+	j = 0;
+	while (dest[i] != '\0')
 	{
-		if ((i * i) == nb)
-		{
-			if (i % 2 != 0)
-				return (0);
-			break ;
-		}
 		i++;
 	}
-	return (i);
+	while (src[j] != '\0' && j < nb)
+	{
+		dest[i] = src[j];
+		j++;
+		i++;
+	}
+	dest[i] = '\0';
+	return (dest);
 }
-/*
+
 #include <stdio.h>
 
 int	main(void)
 {
-	int	func;
+	char	*func;
+	char	src[20] = "World";
+	char	dest[15] = "Hello ";
 
-	func = ft_sqrt(49);
-	printf("%d\n", func);
+	func = ft_strncat(dest, src, 4);
+	printf("%s\n", func);
 	return (0);
-}*/
+}

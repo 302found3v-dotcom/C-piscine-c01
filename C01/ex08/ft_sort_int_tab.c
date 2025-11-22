@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_sort_int_tab.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jreyes-s <jreyes-s@student.42madrid.c      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/11/09 17:14:44 by jreyes-s          #+#    #+#             */
+/*   Updated: 2025/11/09 17:35:08 by jreyes-s         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <unistd.h>
 
 /*void  ft_putchar(char c)
@@ -17,28 +29,28 @@ void ft_putnbr(int nb)
     ft_putchar((nb % 10) + '0');
 }
 */
-void  ft_sort_int_tab(int *tab, int size)
+void	ft_sort_int_tab(int *tab, int size)
 {
-  int i;
-  int j;
-  int temp;
+	int	i;
+	int	j;
+	int	temp;
 
-  i = 0;
-  while (i < size)
-  {
-    j = i + 1;
-    while (j < size)
-    {
-      if (tab[j] < tab[i])
-      {
-        temp = tab[i];
-        tab[i] = tab[j];
-        tab[j] = temp;
-      }
-      j++;
-    }
-    i++;
-  }
+	i = 0;
+	while (i < size)
+	{
+		j = i + 1;
+		while (j < size)
+		{
+			if (tab[j] < tab[i])
+			{
+				temp = tab[i];
+				tab[i] = tab[j];
+				tab[j] = temp;
+			}
+			j++;
+		}
+		i++;
+	}
 }
 /*
 int main(void)

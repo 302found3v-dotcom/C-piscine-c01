@@ -1,18 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ft.c                                            :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jreyes-s <jreyes-s@student.42madrid.c      +#+  +:+       +#+        */
+/*   By: jreyes-s <jreyes-s@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/09 17:13:08 by jreyes-s          #+#    #+#             */
-/*   Updated: 2025/11/09 17:36:17 by jreyes-s         ###   ########.fr       */
+/*   Created: 2025/11/14 14:09:29 by jreyes-s          #+#    #+#             */
+/*   Updated: 2025/11/21 12:53:21 by jreyes-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ft_ft(int *nbr)
+int	ft_strlen(char *str)
 {
-	*nbr = 42;
+	int	i;
+
+	i = 0;
+	while (str[i] != '\0')
+	{
+		i++;
+	}
+	return (i);
 }
+/*
+#include <stdio.h>
+
+int	main(void)
+{
+	int	func;
+
+	func = ft_strlen("Hello World!");
+	printf("%d\n", func);
+	return (0);
+}*/

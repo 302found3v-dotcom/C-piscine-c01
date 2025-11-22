@@ -1,12 +1,24 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_swap.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jreyes-s <jreyes-s@student.42madrid.c      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/11/09 17:13:27 by jreyes-s          #+#    #+#             */
+/*   Updated: 2025/11/09 17:17:48 by jreyes-s         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <unistd.h>
 
-void  ft_swap(int *a, int *b)
+void	ft_swap(int *a, int *b)
 {
-  int temp;
+	int	temp;
 
-  temp = *a;
-  *a = *b;
-  *b = temp;
+	temp = *a;
+	*a = *b;
+	*b = temp;
 }
 /*
 int main(void)

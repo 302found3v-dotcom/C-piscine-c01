@@ -1,40 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sqrt.c                                          :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jreyes-s <jreyes-s@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/20 06:07:12 by jreyes-s          #+#    #+#             */
-/*   Updated: 2025/11/22 23:33:27 by jreyes-s         ###   ########.fr       */
+/*   Created: 2025/11/15 13:32:38 by jreyes-s          #+#    #+#             */
+/*   Updated: 2025/11/19 18:20:02 by jreyes-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_sqrt(int nb)
+#include <stddef.h>
+
+char	*ft_strstr(char *str, char *to_find)
 {
 	int	i;
+	int	j;
 
-	i = 0;
-	while (i < nb)
+	while (*to_find == '\0')
 	{
-		if ((i * i) == nb)
+		return (str);
+	}
+	i = 0;
+	while (str[i])
+	{
+		j = 0;
+		while (to_find[j] && str[i + j] == to_find[j])
 		{
-			if (i % 2 != 0)
-				return (0);
-			break ;
+			j++;
 		}
+		if (to_find[j] == '\0')
+			return (str + i);
 		i++;
 	}
-	return (i);
+	return (NULL);
 }
-/*
-#include <stdio.h>
 
+#include <stdio.h>
 int	main(void)
 {
-	int	func;
+	char	*str = "Holala luci";
+	char	*to_find = "la luci";
 
-	func = ft_sqrt(49);
-	printf("%d\n", func);
+	char *func = ft_strstr(str, to_find);
+	printf("%s\n", func);
 	return (0);
-}*/
+}

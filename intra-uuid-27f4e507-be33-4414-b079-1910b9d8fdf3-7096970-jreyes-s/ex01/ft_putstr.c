@@ -1,18 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ft.c                                            :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jreyes-s <jreyes-s@student.42madrid.c      +#+  +:+       +#+        */
+/*   By: jreyes-s <jreyes-s@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/09 17:13:08 by jreyes-s          #+#    #+#             */
-/*   Updated: 2025/11/09 17:36:17 by jreyes-s         ###   ########.fr       */
+/*   Created: 2025/11/14 14:09:42 by jreyes-s          #+#    #+#             */
+/*   Updated: 2025/11/21 13:01:36 by jreyes-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_ft(int *nbr)
+void	ft_putstr(char *str)
 {
-	*nbr = 42;
+	int	i;
+
+	i = 0;
+	while (str[i] != '\0')
+	{
+		write(1, &str[i], 1);
+		i++;
+	}
 }
+/*
+int	main(void)
+{
+	char	*str;
+
+	str = "Hola Mundo!";
+	ft_putstr(str);
+	return (0);
+}*/
