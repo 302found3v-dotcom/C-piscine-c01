@@ -52,6 +52,7 @@ int	ft_atoi_base(char *str, char *base)
 	int	res;
 	int	sign;
 	int	base_len;
+	int	index;
 
 	res = 0;
 	sign = 1;
@@ -68,7 +69,7 @@ int	ft_atoi_base(char *str, char *base)
 			sign *= -1;
 		str++;
 	}
-	while (*str && get_index(*str, base) != -1)
+	while (*str && (index = get_index(*str, base)) != -1)
 	{
 		res = (res * base_len) + get_index(*str, base);
 		str++;
