@@ -17,7 +17,7 @@ void	ft_putchar(char c)
 	write(1, &c, 1);
 }
 
-int	check_ft_putnbr_base(char *base)
+int	check_base(char *base)
 {
 	int	i;
 	int	j;
@@ -47,9 +47,9 @@ void	ft_putnbr_base(int nbr, char *base)
 	long	nb;
 
 	len = 0;
-	if (!check_ft_putnbr_base(base))
-		return ;
 	nb = nbr;
+	if (!check_base(base))
+		return ;
 	while (base[len])
 		len++;
 	if (nb < 0)
