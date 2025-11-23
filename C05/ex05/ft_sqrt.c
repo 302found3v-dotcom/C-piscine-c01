@@ -34,7 +34,7 @@ int	main(void)
 {
 	int	func;
 
-	func = ft_sqrt(49);
+	func = ft_sqrt(16);
 	printf("%d\n", func);
 	return (0);
 }*/

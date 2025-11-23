@@ -12,18 +12,15 @@
 
 int	ft_fibonacci(int index)
 {
-	int	fn;
-
 	if (index < 0)
 		return (-1);
 	if (index == 0)
 		return (0);
 	if (index == 1)
 		return (1);
-	fn = ft_fibonacci(index - 1) + ft_fibonacci(index - 2);
-	return (fn);
+	return (ft_fibonacci(index - 1) + ft_fibonacci(index - 2));
 }
-/*
+
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -37,4 +34,4 @@ int	main(int argc, char **argv)
 		printf("%d\n", func);
 	}
 	return (0);
-}*/
+}
